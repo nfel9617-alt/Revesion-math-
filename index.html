@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة نوفل | الموسوعة الشاملة لشهادة التعليم المتوسط (BEM)</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true },
+            chtml: { scale: 1.15 } 
+        };
+    </script>
+
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* تنسيق الصناديق الرياضية */
+        .math-box { direction: ltr; text-align: left; background: #ffffff; padding: 15px; border-radius: 8px; border: 1px dashed #94a3b8; margin: 10px 0; overflow-x: auto; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);}
+        .math-inline { direction: ltr; display: inline-block; font-weight: bold; color: #1d4ed8; padding: 0 4px;}
+        
+        /* تنسيق منهجية البرهان */
+        .proof-box { background-color: #f0fdf4; border-right: 5px solid #16a34a; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .proof-title { color: #166534; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .step { background: #dcfce7; color: #15803d; padding: 3px 10px; border-radius: 20px; font-weight: bold; margin-left: 8px; font-size: 0.9rem;}
+        
+        .card { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .card-title { font-size: 1.4rem; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-gradient-to-l from-indigo-900 to-blue-800 text-white py-12 px-4 text-center shadow-lg relative">
+        <div class="absolute top-0 right-0 bg-yellow-400 text-blue-900 font-black py-2 px-6 rounded-bl-2xl shadow-md">منصة نوفل التعليمية</div>
+        <h1 class="text-3xl md:text-5xl font-black mb-4 mt-4">الموسوعة الشاملة لفرسان الـ BEM</h1>
+        <p class="text-blue-200 text-lg max-w-3xl mx-auto">كل الدروس، القوانين، والكتابة الرياضية السليمة مع منهجيات البرهان خطوة بخطوة.</p>
+    </header>
+
+    <div class="container mx-auto px-4 mt-8">
+        <div class="flex flex-wrap justify-center gap-3">
+            <button onclick="switchTab('num')" class="nav-btn bg-blue-600 text-white border-2 border-blue-600 px-6 py-3 rounded-xl font-bold transition shadow-sm" id="btn-num"><i class="fa-solid fa-calculator ml-2"></i>الأنشطة العددية</button>
+            <button onclick="switchTab('geo')" class="nav-btn bg-white text-blue-900 border-2 border-blue-200 hover:border-blue-600 px-6 py-3 rounded-xl font-bold transition shadow-sm" id="btn-geo"><i class="fa-solid fa-shapes ml-2"></i>الأنشطة الهندسية</button>
+            <button onclick="switchTab('func')" class="nav-btn bg-white text-blue-900 border-2 border-blue-200 hover:border-blue-600 px-6 py-3 rounded-xl font-bold transition shadow-sm" id="btn-func"><i class="fa-solid fa-chart-line ml-2"></i>الدوال والمعادلات</button>
+            <button onclick="switchTab('stat')" class="nav-btn bg-white text-blue-900 border-2 border-blue-200 hover:border-blue-600 px-6 py-3 rounded-xl font-bold transition shadow-sm" id="btn-stat"><i class="fa-solid fa-chart-pie ml-2"></i>الإحصاء</button>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+
+        <section id="num" class="tab-content active">
+            
+            <div class="card border-t-4 border-blue-500">
+                <div class="card-title"><i class="fa-solid fa-divide text-blue-500"></i> القاسم المشترك الأكبر (PGCD) والعمليات على الكسور</div>
+                <ul class="space-y-2 mb-4 text-gray-700">
+                    <li><strong class="text-blue-900">خوارزمية إقليدس:</strong> تعتمد على القسمات المتتالية. المقسوم = القاسم × الحاصل + الباقي. الـ PGCD هو <strong>آخر باقٍ غير معدوم</strong>.</li>
+                    <li><strong class="text-blue-900">العددان الأوليان فيما بينهما:</strong> هما عددان \( a \) و \( b \) يحققان: <span class="math-inline">\( \text{PGCD}(a, b) = 1 \)</span>.</li>
+                    <li><strong class="text-blue-900">اختزال الكسر:</strong> نقسم البسط والمقام على الـ PGCD للحصول على كسر غير قابل للاختزال.</li>
+                </ul>
+                <div class="proof-box" style="border-color: #3b82f6; background-color: #eff6ff;">
+                    <div class="proof-title" style="color: #1d4ed8;">منهجية الحل: العمليات على الكسور</div>
+                    <p>لحساب عبارة تتضمن كسوراً، نتبع <strong>أولويات الحساب</strong> (الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح). <strong>الجمع والطرح يتطلبان توحيد المقامات.</strong></p>
+                    <div class="math-box">
+                        \[ A = \frac{3}{5} - \frac{2}{5} \times \frac{7}{4} \]
+                        \[ A = \frac{3}{5} - \frac{14}{20} \quad \text{(الأولوية للضرب)} \]
+                        \[ A = \frac{3 \times 4}{5 \times 4} - \frac{14}{20} = \frac{12}{20} - \frac{14}{20} = \frac{-2}{20} \]
+                        \[ A = \frac{-1}{10} \quad \text{(بعد الاختزال)} \]
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-t-4 border-blue-500">
+                <div class="card-title"><i class="fa-solid fa-square-root-variable text-blue-500"></i> الجذور التربيعية والمعادلة \( x^2 = a \)</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                        <strong class="text-blue-900 block mb-2">قواعد الحساب على الجذور:</strong>
+                        <span class="math-inline block mb-1">\( \sqrt{a} \times \sqrt{b} = \sqrt{a \times b} \)</span>
+                        <span class="math-inline block mb-1">\( \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} \) (حيث \( b \neq 0 \))</span>
+                        <span class="math-inline block">\( (\sqrt{a})^2 = \sqrt{a^2} = a \)</span>
+                        <div class="mt-2 text-red-600 text-sm font-bold"><i class="fa-solid fa-triangle-exclamation"></i> حذار: \( \sqrt{a+b} \neq \sqrt{a} + \sqrt{b} \)</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                        <strong class="text-blue-900 block mb-2">حل المعادلة \( x^2 = a \):</strong>
+                        <ul class="text-sm space-y-1">
+                            <li>إذا كان \( a > 0 \): للمعادلة حلان هما \( \sqrt{a} \) و \( -\sqrt{a} \).</li>
+                            <li>إذا كان \( a = 0 \): للمعادلة حل وحيد هو \( 0 \).</li>
+                            <li>إذا كان \( a < 0 \): المعادلة <strong>ليس لها حل</strong> (لأن المربع دائماً موجب).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="proof-box">
+                    <div class="proof-title">منهجية الحل: تبسيط الجذور وتنطيق المقام</div>
+                    <p><span class="step">تبسيط عبارة:</span> لكتابة \( \sqrt{45} + 2\sqrt{20} - \sqrt{5} \) على الشكل \( a\sqrt{5} \):</p>
+                    <div class="math-box">
+                        \[ \sqrt{9 \times 5} + 2\sqrt{4 \times 5} - \sqrt{5} \]
+                        \[ 3\sqrt{5} + 2(2\sqrt{5}) - 1\sqrt{5} \]
+                        \[ (3 + 4 - 1)\sqrt{5} = 6\sqrt{5} \]
+                    </div>
+                    <p><span class="step mt-3">تنطيق المقام:</span> لجعل مقام النسبة \( \frac{3}{\sqrt{2}} \) عدداً ناطقاً، نضرب البسط والمقام في \( \sqrt{2} \):</p>
+                    <div class="math-box">
+                        \[ \frac{3 \times \sqrt{2}}{\sqrt{2} \times \sqrt{2}} = \frac{3\sqrt{2}}{2} \]
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-t-4 border-blue-500">
+                <div class="card-title"><i class="fa-solid fa-microscope text-blue-500"></i> الكتابة العلمية (Écriture Scientifique)</div>
+                <p>هي كتابة العدد على الشكل <span class="math-inline">\( a \times 10^n \)</span> أو <span class="math-inline">\( -a \times 10^n \)</span> حيث \( a \) عدد عشري <strong>مكتوب برقم واحد فقط قبل الفاصلة (غير معدوم)</strong>، و \( n \) عدد صحيح نسبي.</p>
+                <div class="math-box">
+                    \[ B = \frac{1.2 \times 10^{-2} \times 7 \times 10^5}{14 \times 10^2} = \frac{1.2 \times 7}{14} \times \frac{10^{-2} \times 10^5}{10^2} \]
+                    \[ B = 0.6 \times 10^1 = 6 \times 10^{-1} \times 10^1 = 6 \times 10^0 \]
+                </div>
+            </div>
+
+            <div class="card border-t-4 border-blue-500">
+                <div class="card-title"><i class="fa-solid fa-pen-clip text-blue-500"></i> الحساب الحرفي والمعادلات والمتراجحات</div>
+                <p><strong class="text-blue-900">المتطابقات الشهيرة للحفظ:</strong></p>
+                <div class="math-box text-center">
+                    \[ (a+b)^2 = a^2 + 2ab + b^2 \]
+                    \[ (a-b)^2 = a^2 - 2ab + b^2 \]
+                    \[ (a-b)(a+b) = a^2 - b^2 \]
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="proof-box m-0">
+                        <div class="proof-title text-sm">منهجية: التحليل (Factorisation)</div>
+                        <p class="text-sm">يعتمد على استخراج عامل مشترك أو تطبيق متطابقة شهيرة.</p>
+                        <div class="math-box p-2 text-sm m-0 mt-2">
+                            \[ E = (x+3)^2 - (x+3)(2x-1) \]
+                            \[ E = (x+3)[(x+3) - (2x-1)] \]
+                            \[ E = (x+3)[x + 3 - 2x + 1] \]
+                            \[ E = (x+3)(-x + 4) \]
+                        </div>
+                    </div>
+                    <div class="proof-box m-0" style="border-color: #f59e0b; background-color: #fffbeb;">
+                        <div class="proof-title text-sm" style="color: #b45309;">منهجية: حل معادلة الجداء المعدوم</div>
+                        <p class="text-sm">جداء يساوي الصفر يعني العامل الأول معدوم <strong>أو</strong> الثاني معدوم.</p>
+                        <div class="math-box p-2 text-sm m-0 mt-2">
+                            \[ (x+3)(-x+4) = 0 \]
+                            إما \( -x+4 = 0 \implies x = 4 \)<br>
+                            أو \( x+3 = 0 \implies x = -3 \)<br>
+                            للمعادلة حلان هما \( 4 \) و \( -3 \).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded border-l-4 border-red-500 mt-4">
+                    <strong class="text-red-800"><i class="fa-solid fa-triangle-exclamation"></i> قاعدة هامة في المتراجحات:</strong> عند قسمة أو ضرب طرفي المتراجحة في <strong>عدد سالب</strong>، يجب <strong>تغيير اتجاه المتراجحة</strong> (الأكبر يصبح أصغر).
+                </div>
+            </div>
+        </section>
+
+        <section id="geo" class="tab-content">
+            
+            <div class="card border-t-4 border-emerald-500">
+                <div class="card-title"><i class="fa-solid fa-ruler-triangle text-emerald-600"></i> خاصيتا طالس وفيثاغورس (Thales & Pythagoras)</div>
+                
+                
+
+[Image of Pythagoras theorem in right triangle]
+
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="proof-box m-0 border-emerald-500 bg-emerald-50">
+                        <div class="proof-title text-emerald-800 text-sm">البرهان النموذجي: خاصية طالس المباشرة (لحساب طول)</div>
+                        <div class="math-box p-2 text-sm m-0 mt-2">
+                            بما أن النقط \( A, M, B \) والنقط \( A, N, C \) في استقامية،<br>
+                            وبما أن \( (MN) \parallel (BC) \) (حسب المعطيات)،<br>
+                            فإنه وحسب خاصية طالس نجد:<br>
+                            \[ \frac{AM}{AB} = \frac{AN}{AC} = \frac{MN}{BC} \]
+                            بالتعويض العددي والتصالب نجد الطول المجهول.
+                        </div>
+                    </div>
+                    <div class="proof-box m-0 border-emerald-500 bg-emerald-50">
+                        <div class="proof-title text-emerald-800 text-sm">البرهان النموذجي: خاصية طالس العكسية (لإثبات التوازي)</div>
+                        <div class="math-box p-2 text-sm m-0 mt-2">
+                            نحسب النسبة الأولى: \( \frac{AM}{AB} = ... \)<br>
+                            نحسب النسبة الثانية: \( \frac{AN}{AC} = ... \)<br>
+                            بما أن \( \frac{AM}{AB} = \frac{AN}{AC} \)،<br>
+                            والنقط \( A, M, B \) و \( A, N, C \) على استقامية وبنفس الترتيب،<br>
+                            فحسب الخاصية العكسية لطالس: \( (MN) \parallel (BC) \).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="proof-box m-0 border-teal-500 bg-teal-50">
+                        <div class="proof-title text-teal-800 text-sm">خاصية فيثاغورس (لحساب طول)</div>
+                        <div class="math-box p-2 text-sm m-0 mt-2">
+                            بما أن المثلث \( ABC \) قائم في \( A \)،<br>
+                            فحسب خاصية فيثاغورس:<br>
+                            \[ BC^2 = AB^2 + AC^2 \]
+                        </div>
+                    </div>
+                    <div class="proof-box m-0 border-teal-500 bg-teal-50">
+                        <div class="proof-title text-teal-800 text-sm">خاصية فيثاغورس العكسية (لإثبات التعامد)</div>
+                        <div class="math-box p-2 text-sm m-0 mt-2">
+                            نحسب مربع أطول ضلع: \( BC^2 = ... \)<br>
+                            نحسب مجموع مربعي الضلعين: \( AB^2 + AC^2 = ... \)<br>
+                            بما أن \( BC^2 = AB^2 + AC^2 \)،<br>
+                            فحسب الخاصية العكسية لفيثاغورس، المثلث قائم في \( A \).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-t-4 border-emerald-500">
+                <div class="card-title"><i class="fa-solid fa-angle-right text-emerald-600"></i> النسب المثلثية، الدائرة المحيطية والدوران</div>
+                
+                <p class="text-sm font-bold text-red-600 mb-2">النسب المثلثية تطبق في المثلث القائم فقط!</p>
+                <div class="math-box text-center">
+                    <span class="math-inline">\( \cos(\alpha) = \frac{\text{المجاور}}{\text{الوتر}} \)</span> &nbsp; | &nbsp;
+                    <span class="math-inline">\( \sin(\alpha) = \frac{\text{المقابل}}{\text{الوتر}} \)</span> &nbsp; | &nbsp;
+                    <span class="math-inline">\( \tan(\alpha) = \frac{\text{المقابل}}{\text{المجاور}} \)</span>
+                </div>
+                <div class="math-box text-center mt-2">
+                    <strong>علاقات هامة:</strong> &nbsp; \( \cos^2(\alpha) + \sin^2(\alpha) = 1 \) &nbsp; و &nbsp; \( \tan(\alpha) = \frac{\sin(\alpha)}{\cos(\alpha)} \)
+                </div>
+
+                <div class="mt-6 border-l-4 border-emerald-500 pl-4 bg-emerald-50 p-4 rounded">
+                    <strong class="text-emerald-800 block mb-2">الدائرة والزوايا:</strong>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li><strong>الدائرة المحيطة بمثلث قائم:</strong> مركزها هو <strong>منتصف الوتر</strong> وطول نصف قطرها هو نصف طول الوتر.</li>
+                        <li><strong>الزاوية المحيطية والزاوية المركزية:</strong> إذا حصرتا نفس القوس، فإن قيس الزاوية المركزية يساوي <strong>ضعف</strong> قيس الزاوية المحيطية. الزوايا المحيطية التي تحصر نفس القوس <strong>متقايسة</strong>.</li>
+                        <li><strong>الدوران (Rotation):</strong> يحافظ على الأطوال، الأقياس، المساحات، واستقامية النقط.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-t-4 border-emerald-500">
+                <div class="card-title"><i class="fa-solid fa-arrows-up-down-left-right text-emerald-600"></i> الأشعة والمعالم (Vectors)</div>
+                
+
+[Image of vector addition parallelogram rule]
+
+                <p><strong>جمع الأشعة:</strong><br>
+                - <strong>علاقة شال:</strong> نهاية الأول هي بداية الثاني: <span class="math-inline">\( \vec{AB} + \vec{BC} = \vec{AC} \)</span>.<br>
+                - <strong>متوازي الأضلاع:</strong> لهما نفس البداية: <span class="math-inline">\( \vec{AB} + \vec{AD} = \vec{AC} \)</span>.</p>
+
+                <div class="proof-box m-0 mt-4 border-emerald-500 bg-emerald-50">
+                    <div class="proof-title text-emerald-800 text-sm">قوانين الأشعة في المستوي (للحفظ والتطبيق المباشر)</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div class="bg-white p-2 rounded border border-emerald-200">
+                            <strong>إحداثيات شعاع:</strong>
+                            <div class="math-box m-0 p-1 text-sm text-center">\[ \vec{AB} \begin{pmatrix} x_B - x_A \\ y_B - y_A \end{pmatrix} \]</div>
+                        </div>
+                        <div class="bg-white p-2 rounded border border-emerald-200">
+                            <strong>إحداثيات منتصف:</strong>
+                            <div class="math-box m-0 p-1 text-sm text-center">\[ M \left( \frac{x_A + x_B}{2} ; \frac{y_A + y_B}{2} \right) \]</div>
+                        </div>
+                        <div class="bg-white p-2 rounded border border-emerald-200">
+                            <strong>حساب المسافة (طول):</strong>
+                            <div class="math-box m-0 p-1 text-sm text-center">\[ AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} \]</div>
+                        </div>
+                    </div>
+                    <p class="text-sm font-bold text-red-600 mt-2 text-center">إثبات أن $ABCD$ متوازي أضلاع يعتمد على إثبات تساوي شعاعين: $\vec{AB} = \vec{DC}$</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="func" class="tab-content">
+            
+            <div class="card border-t-4 border-purple-600">
+                <div class="card-title"><i class="fa-solid fa-chart-line text-purple-600"></i> الدوال الخطية والتآلفية</div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded border border-purple-200">
+                        <strong class="text-purple-900 block border-b pb-2 mb-2">الدالة الخطية (Fonction Linéaire)</strong>
+                        <p>تُعبر عن التناسبية. عباراتها: <span class="math-inline">\( f(x) = ax \)</span>.</p>
+                        <p><strong>التمثيل البياني:</strong> مستقيم يمر حتماً من <strong>المبدأ \( O(0,0) \)</strong>.</p>
+                        <div class="math-box p-2 mt-2">حساب المعامل: \( a = \frac{f(x)}{x} \)</div>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded border border-purple-200">
+                        <strong class="text-purple-900 block border-b pb-2 mb-2">الدالة التآلفية (Fonction Affine)</strong>
+                        <p>عباراتها: <span class="math-inline">\( f(x) = ax + b \)</span>.</p>
+                        <p><strong>التمثيل البياني:</strong> مستقيم <strong>لا يمر من المبدأ</strong> (إلا إذا كان $b=0$). النقطة $b$ هي ترتيب نقطة التقاطع مع محور التراتيب.</p>
+                        <div class="math-box p-2 mt-2">حساب المعامل: \( a = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \)</div>
+                    </div>
+                </div>
+                
+                <div class="proof-box mt-4 border-purple-500 bg-purple-50">
+                    <div class="proof-title text-purple-800 text-sm">منهجية: إيجاد العبارة الجبرية لدالة تآلفية</div>
+                    <p class="text-sm">إذا أُعطينا \( f(2) = 5 \) و \( f(-1) = -4 \):</p>
+                    <div class="math-box p-2 text-sm m-0 mt-2">
+                        1. نحسب \( a \): \( a = \frac{5 - (-4)}{2 - (-1)} = \frac{9}{3} = 3 \). إذن: \( f(x) = 3x + b \).<br>
+                        2. نحسب \( b \): نعوض بـ \( x=2 \) و \( f(2)=5 \):<br>
+                        \( 3(2) + b = 5 \implies 6 + b = 5 \implies b = -1 \).<br>
+                        العبارة: \( f(x) = 3x - 1 \).
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-t-4 border-purple-600">
+                <div class="card-title"><i class="fa-solid fa-equals text-purple-600"></i> جملة معادلتين من الدرجة الأولى بمجهولين وترييض مشكلة</div>
+                <p>الحل هو إيجاد الثنائية \( (x, y) \) التي تحقق المعادلتين معاً. هناك طريقتان جبريتان: <strong>التعويض</strong> و<strong>الجمع والتعويض</strong> (وهي الأسهل).</p>
+                
+                <div class="proof-box mt-4 border-purple-500 bg-purple-50">
+                    <div class="proof-title text-purple-800 text-sm">منهجية: طريقة الجمع والتعويض</div>
+                    <div class="math-box p-2 text-sm m-0 mt-2">
+                        مثال:<br>
+                        (1) \( 2x + 3y = 7 \)<br>
+                        (2) \( x - y = 1 \)<br><br>
+                        1. نضرب المعادلة (2) في العدد \( 3 \) للتخلص من المجهول \( y \):<br>
+                        (1) \( 2x + 3y = 7 \)<br>
+                        (2) \( 3x - 3y = 3 \)<br>
+                        2. نجمع المعادلتين طرفاً لطرف:<br>
+                        \( 5x = 10 \implies x = 2 \).<br>
+                        3. نعوض \( x=2 \) في إحدى المعادلات لإيجاد \( y \):<br>
+                        في (2): \( 2 - y = 1 \implies y = 1 \).<br>
+                        إذن حل الجملة هو الثنائية \( (2 ; 1) \).
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 p-4 rounded border-l-4 border-indigo-500 mt-4 text-sm">
+                    <strong class="text-indigo-800 block mb-2">ترييض مشكلة (حل وضعية إدماجية):</strong>
+                    لحل مشكلة يجب اتباع الخطوات التالية:
+                    <ol class="list-decimal list-inside ml-2">
+                        <li><strong>اختيار المجاهيل:</strong> نرمز للأشياء المجهولة بـ \( x \) و \( y \).</li>
+                        <li><strong>صياغة المعادلتين:</strong> استخراج العلاقات من نص المسألة لإنشاء الجملة.</li>
+                        <li><strong>حل الجملة:</strong> باستعمال الطرق السابقة.</li>
+                        <li><strong>التصريح بالنتيجة:</strong> كتابة الإجابة اللغوية توافق المطلوب.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="stat" class="tab-content">
+            <div class="card border-t-4 border-amber-500">
+                <div class="card-title"><i class="fa-solid fa-chart-pie text-amber-600"></i> تنظيم المعطيات والإحصاء (Statistiques)</div>
+                <p>في الإحصاء، نعتمد على استخراج معلومات من جدول إحصائي يضم <strong>القيم</strong> و<strong>تكراراتها</strong>.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-amber-50 p-4 rounded border border-amber-200">
+                        <strong class="text-amber-900 block mb-2">المتوسط الحسابي المتوازن (\( \bar{x} \)):</strong>
+                        <p class="text-sm text-gray-700 mb-2">هو مجموع جداءات القيم (أو مراكز الفئات) في تكراراتها، مقسوماً على التكرار الكلي \( N \).</p>
+                        <div class="math-box m-0 p-2 text-sm text-center">
+                            \[ \bar{x} = \frac{x_1 \cdot n_1 + x_2 \cdot n_2 + \dots + x_k \cdot n_k}{N} \]
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded border border-amber-200">
+                        <strong class="text-amber-900 block mb-2">الوسيط (Médiane):</strong>
+                        <p class="text-sm text-gray-700">هو القيمة التي تقسم السلسلة (المرتبة تصاعدياً أو تنازلياً) إلى نصفين متساويين في التكرار. نحدده بالاستعانة بـ <strong>التكرار المجمع الصاعد</strong>.</p>
+                        <strong class="text-amber-900 block mt-4 mb-2">المدى (Étendue):</strong>
+                        <p class="text-sm text-gray-700">هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة الإحصائية. (لا علاقة له بالتكرار).</p>
+                    </div>
+                </div>
+                
+                <div class="proof-box m-0 mt-4 border-amber-500 bg-orange-50">
+                    <div class="proof-title text-amber-800 text-sm">التكرار المجمع الصاعد والنازل والتوتر</div>
+                    <ul class="list-disc list-inside text-sm text-gray-800 space-y-2">
+                        <li><strong>التكرار المجمع الصاعد:</strong> نضيف لتكرار كل قيمة، مجموع التكرارات للقيم التي تسبقها. (القيمة الأخيرة تمثل التكرار الكلي N).</li>
+                        <li><strong>التكرار المجمع النازل:</strong> نطرح تكرار كل قيمة من التكرار المجمع النازل الذي يسبقها. (القيمة الأولى تمثل التكرار الكلي N).</li>
+                        <li><strong>التواتر (النسبة):</strong> هو تكرار القيمة مقسوماً على التكرار الكلي <span class="math-inline">\( f = \frac{n}{N} \)</span>. (مجموع التواترات يساوي 1 دائماً).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-300 py-8 text-center text-sm mt-8 border-t-4 border-blue-500">
+        <p class="font-black text-xl text-white mb-2">منصة نوفل التعليمية <i class="fa-solid fa-graduation-cap text-yellow-400"></i></p>
+        <p>مصممة بعناية فائقة لضمان العلامة الكاملة 20/20 في شهادة التعليم المتوسط.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // إخفاء المحتوى
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            // تصفير ستايل الأزرار
+            document.querySelectorAll('.nav-btn').forEach(el => {
+                el.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+                el.classList.add('bg-white', 'text-blue-900', 'border-blue-200');
+            });
+            
+            // إظهار القسم المطلوب
+            document.getElementById(tabId).classList.add('active');
+            
+            // تفعيل الزر المطلوب
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'text-blue-900', 'border-blue-200');
+            activeBtn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+        }
+    </script>
+</body>
+</html>
